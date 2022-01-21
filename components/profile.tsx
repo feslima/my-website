@@ -14,7 +14,7 @@ const ProfileImage: FunctionComponent<{}> = () => {
 
 const ProfileInfo: FunctionComponent<{}> = () => {
   return (
-    <div className="self-center">
+    <div className="self-center mt-3 sm:mt-0">
       <h1 className="text-4xl text-center">Felipe Lima</h1>
       <h2 className="text-xl text-center">Backend developer</h2>
       <h3 className="text-md text-center mt-2">feslima93@gmail.com</h3>
