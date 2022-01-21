@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
+import Profile from '../components/profile';
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +10,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Felipe's Personal Website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Profile />
     </div>
   );
 };
