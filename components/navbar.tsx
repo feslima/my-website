@@ -4,11 +4,15 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 interface INavbarItemProps {
   name: string;
+  sectionRef: string;
 }
-const NavBarItem: FunctionComponent<INavbarItemProps> = ({ name }) => {
+const NavBarItem: FunctionComponent<INavbarItemProps> = ({
+  name,
+  sectionRef,
+}) => {
   return (
     <li className="px-1 mx-1 inline-block uppercase hover:opacity-50 hover:after:content-['\_']">
-      <a href="#">{name}</a>
+      <a href={`#${sectionRef}`}>{name}</a>
     </li>
   );
 };
@@ -19,7 +23,7 @@ interface INavbarProps {
 
 const Navbar: FunctionComponent<INavbarProps> = ({ sticky = false }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const items: string[] = ['Resume', 'Portfolio', 'About', 'Contact'];
+  const items: string[] = ['Resume', 'Portfolio'];
   const stickyClass = sticky ? 'sticky top-0 z-10' : '';
   return (
     <div
@@ -39,7 +43,11 @@ const Navbar: FunctionComponent<INavbarProps> = ({ sticky = false }) => {
         >
           <ul className="list-none flex flex-col sm:flex-row">
             {items.map((item) => (
-              <NavBarItem key={item.toLowerCase()} name={item} />
+              <NavBarItem
+                key={item.toLowerCase()}
+                name={item}
+                sectionRef={item.toLowerCase()}
+              />
             ))}
           </ul>
         </div>
