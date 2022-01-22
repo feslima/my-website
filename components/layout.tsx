@@ -7,8 +7,8 @@ type LayoutProps = {
 const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div className="bg-fuchsia-100 min-h-screen">
-      <Navbar />
-      {children}
+      <Navbar sticky={true} />
+      <div className="max-w-screen-lg mx-auto">{children}</div>
     </div>
   );
 };
