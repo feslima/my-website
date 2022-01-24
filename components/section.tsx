@@ -11,10 +11,11 @@ export const SectionTitle: FunctionComponent<ISectionTitleProps> = ({
   animate = false,
 }) => {
   const text_size = `text-${size}`;
-  const animation = animate ? 'after:animate-blink' : '';
+  const animation = animate ? 'animate-blink' : '';
   return (
-    <h1 className={`${text_size} after:content-['\\_'] ${animation}`}>
+    <h1 className={`${text_size}`}>
       {text}
+      <p className={`inline ${animation}`}>_</p>
     </h1>
   );
 };

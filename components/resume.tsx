@@ -62,18 +62,18 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
             leaveTo="transform -translate-y-1/4 opacity-0"
           >
             <Disclosure.Panel className="">
-              <ul className="list-none px-3 mt-3 gap-x-0 space-y-3 columns-2">
+              <div className="list-none px-3 mt-3 gap-x-0 space-y-3 columns-2">
                 {tools.map(({ name, url, bracket, filename }) => (
-                  <li>
+                  <div key={name}>
                     <ToolIcon
                       name={name}
                       url={url}
                       bracket={bracket}
                       filename={filename}
                     />
-                  </li>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </Disclosure.Panel>
           </Transition>
         </>
@@ -96,8 +96,8 @@ const Resume: FunctionComponent<{}> = () => {
       </p>
       <p>These are some of my skills/tooling:</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-x-4">
-        {resumeSkills.map(({ description, descriptionIcon, tools }) => (
-          <div className="my-2 mx-auto w-full">
+        {resumeSkills.map(({ description, descriptionIcon, tools }, index) => (
+          <div key={`skill${index}`} className="my-2 mx-auto w-full">
             <ResumeSkill
               description={description}
               descriptionIcon={descriptionIcon}
