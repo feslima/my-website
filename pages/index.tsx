@@ -7,7 +7,7 @@ import Resume from '../components/resume';
 
 const Home: NextPage = () => {
   return (
-    <div className="divide-y divide-gray-400 divide-solid flex justify-center flex-col">
+    <div className="divide-y divide-feslima-400 divide-solid flex justify-center flex-col">
       <Head>
         <title>Felipe Lima</title>
         <meta name="description" content="Felipe's Personal Website" />

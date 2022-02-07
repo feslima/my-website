@@ -23,6 +23,21 @@ module.exports = {
       },
       animation: {
         blink: 'blink 1s step-start 0s infinite'
+      },
+      colors: {
+        feslima: {
+          DEFAULT: '#BE14D9',
+          '50': '#EDADF7',
+          '100': '#E99AF6',
+          '200': '#E175F2',
+          '300': '#D950EF',
+          '400': '#D12AEB',
+          '500': '#BE14D9',
+          '600': '#910FA6',
+          '700': '#640B72',
+          '800': '#37063F',
+          '900': '#0A010C'
+        },
       }
     }
   },

@@ -26,7 +26,7 @@ const Navbar: FunctionComponent<INavbarProps> = ({ sticky = false }) => {
   const stickyClass = sticky ? 'sticky top-0 z-10' : '';
   return (
     <div
-      className={`${stickyClass} bg-fuchsia-900 text-lg text-white font-bold`}
+      className={`${stickyClass} bg-feslima-800 text-lg text-white font-bold`}
     >
       <nav className="max-w-screen-lg mx-auto py-2 flex flex-wrap sm:flex-no-wrap justify-center">
         <p className="mx-8 uppercase text-center sm:text-left self-center grow">

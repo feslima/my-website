@@ -16,7 +16,7 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
     <Disclosure defaultOpen={true}>
       {({ open }) => (
         <>
-          <Disclosure.Button className="py-2 px-4 rounded-lg bg-fuchsia-300 font-medium w-full flex items-center">
+          <Disclosure.Button className="py-2 px-4 rounded-lg bg-feslima-300 font-medium w-full flex items-center">
             <div className="grow">
               <FontAwesomeIcon icon={descriptionIcon} />{' '}
               <span>{description} </span>

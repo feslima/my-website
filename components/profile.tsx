@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const ProfileImage: FunctionComponent<{}> = () => {
   return (
     <img
-      className="w-[200px] h-[300px] rounded-full shadow-lg shadow-fuchsia-500/50 mx-auto sm:mx-0"
+      className="w-[200px] h-[300px] rounded-full shadow-lg shadow-feslima-500/50 mx-auto sm:mx-0"
       src="images/avatar.jpg"
       alt=""
     />
