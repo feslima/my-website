@@ -74,6 +74,11 @@ export const POSTGRESQL: ITechIconProps = {
   url: 'https://www.postgresql.org/',
 };
 
+export const REDIS: ITechIconProps = {
+  name: 'redis',
+  url: 'https://redis.io/',
+};
+
 export const AWS_EC2: ITechIconProps = {
   name: 'AWS EC2',
   filename: 'ec2.svg',

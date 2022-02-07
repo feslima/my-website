@@ -26,6 +26,7 @@ import {
   PYTEST,
   PYTHON,
   REACT,
+  REDIS,
   SQLITE,
   TAILWIND,
   TYPESCRIPT,
@@ -65,7 +66,7 @@ export const resumeSkills: IResumeSkillProps[] = [
   {
     description: 'NoSQL databases',
     descriptionIcon: ['fas', 'database'],
-    tools: [{ name: 'Redis', url: 'https://www.sqlite.org/index.html' }],
+    tools: [REDIS],
   },
   {
     description: 'Cloud Infrastructure',
