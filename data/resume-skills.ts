@@ -1,0 +1,86 @@
+import {
+  faDatabase,
+  faLaptopCode,
+  faCubes,
+  faScrewdriverWrench,
+  faPaintBrush,
+  faCloud,
+} from '@fortawesome/free-solid-svg-icons';
+import { IResumeSkillProps } from '../types';
+import {
+  AWS_CLOUDFRONT,
+  AWS_EC2,
+  AWS_RDS,
+  AWS_S3,
+  BASH,
+  BOOTSTRAP5,
+  CSS,
+  DJANGO,
+  DJANGO_REST,
+  DOCKER,
+  FLASK,
+  GIT,
+  GITHUB,
+  GRAPHQL,
+  HTML,
+  JAVASCRIPT,
+  JWT,
+  MARKDOWN,
+  MYPY,
+  NEXTJS,
+  POSTGRESQL,
+  PULUMI,
+  PYTEST,
+  PYTHON,
+  REACT,
+  SQLITE,
+  TAILWIND,
+  TYPESCRIPT,
+} from './stacks';
+
+export const resumeSkills: IResumeSkillProps[] = [
+  {
+    description: 'Programming Languages',
+    descriptionIcon: faLaptopCode,
+    tools: [PYTHON, JAVASCRIPT, TYPESCRIPT],
+  },
+  {
+    description: 'Frameworks',
+    descriptionIcon: faCubes,
+    tools: [
+      DJANGO,
+      DJANGO_REST,
+      PYTEST,
+      FLASK,
+      REACT,
+      NEXTJS,
+      TAILWIND,
+      BOOTSTRAP5,
+    ],
+  },
+  {
+    description: 'Mark up languages',
+    descriptionIcon: faPaintBrush,
+    tools: [HTML, CSS, MARKDOWN],
+  },
+  {
+    description: 'SQL databases',
+    descriptionIcon: faDatabase,
+    tools: [SQLITE, POSTGRESQL],
+  },
+  {
+    description: 'NoSQL databases',
+    descriptionIcon: faDatabase,
+    tools: [{ name: 'Redis', url: 'https://www.sqlite.org/index.html' }],
+  },
+  {
+    description: 'Cloud Infrastructure',
+    descriptionIcon: faCloud,
+    tools: [AWS_EC2, AWS_S3, AWS_RDS, AWS_CLOUDFRONT, PULUMI],
+  },
+  {
+    description: 'Other tools',
+    descriptionIcon: faScrewdriverWrench,
+    tools: [DOCKER, GRAPHQL, JWT, BASH, MYPY, GIT, GITHUB],
+  },
+];

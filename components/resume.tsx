@@ -3,34 +3,9 @@ import { Section, SectionTitle } from './section';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { Disclosure, Transition } from '@headlessui/react';
-import {
-  IResumeSkillProps,
-  IToolIconProps,
-  resumeSkills,
-} from '../data/resume-skills';
-
-const ToolIcon: FunctionComponent<IToolIconProps> = ({
-  name,
-  url,
-  bracket = '',
-  filename,
-}) => {
-  const location = filename ? filename : `${name.toLowerCase()}.svg`;
-  return (
-    <a
-      className="flex items-center space-x-2"
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img className="inline w-6 h-6" src={`images/icons/${location}`} alt="" />
-      <p>
-        {name}
-        {bracket ? ` [${bracket}]` : ''}
-      </p>
-    </a>
-  );
-};
+import { resumeSkills } from '../data/resume-skills';
+import TechIcon from './tech-icon';
+import { IResumeSkillProps } from '../types';
 
 const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
   description,
@@ -63,14 +38,9 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
           >
             <Disclosure.Panel className="">
               <div className="list-none px-3 mt-3 gap-x-0 space-y-3 columns-2">
-                {tools.map(({ name, url, bracket, filename }) => (
+                {tools.map(({ name, url, filename }) => (
                   <div key={name}>
-                    <ToolIcon
-                      name={name}
-                      url={url}
-                      bracket={bracket}
-                      filename={filename}
-                    />
+                    <TechIcon name={name} url={url} filename={filename} />
                   </div>
                 ))}
               </div>
