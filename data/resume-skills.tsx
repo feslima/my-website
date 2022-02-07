@@ -37,6 +37,11 @@ export const resumeSkills: IResumeSkillProps[] = [
     tools: [
       { name: 'Django', url: 'https://docs.djangoproject.com/en/4.0/' },
       {
+        name: 'Django REST',
+        filename: 'drf.png',
+        url: 'https://www.django-rest-framework.org/',
+      },
+      {
         name: 'pytest',
         filename: 'pytest.png',
         url: 'https://docs.pytest.org/en/stable/contents.html',
@@ -122,6 +127,8 @@ export const resumeSkills: IResumeSkillProps[] = [
         filename: 'docker.png',
         url: 'https://www.docker.com/',
       },
+      { name: 'GraphQL', url: 'https://graphql.org/' },
+      { name: 'JWT', url: 'https://datatracker.ietf.org/doc/html/rfc7519' },
       { name: 'Bash', url: 'https://www.gnu.org/software/bash/' },
       { name: 'mypy', url: 'https://mypy.readthedocs.io/en/stable/' },
       { name: 'Git', url: 'http://git-scm.com/' },
