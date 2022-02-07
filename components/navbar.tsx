@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FunctionComponent, useState } from 'react';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 interface INavbarItemProps {
   name: string;
@@ -34,7 +33,7 @@ const Navbar: FunctionComponent<INavbarProps> = ({ sticky = false }) => {
           Felipe Lima
         </p>
         <button className="sm:hidden px-3" onClick={() => setOpen(!open)}>
-          <FontAwesomeIcon icon={faBars} />
+          <FontAwesomeIcon icon={['fas', 'bars']} />
         </button>
         <div
           className={`mx-4 sm:flex justify-center items-center basis-full sm:basis-auto ${

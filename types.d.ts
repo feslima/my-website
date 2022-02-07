@@ -1,4 +1,4 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface ITechIconProps {
   name: string;
@@ -8,15 +8,17 @@ export interface ITechIconProps {
 
 export interface IResumeSkillProps {
   description: string;
-  descriptionIcon: IconDefinition;
+  descriptionIcon: IconProp;
   tools: ITechIconProps[];
 }
 
+export type StatusType = 'Active' | 'Paused' | 'Archived';
 export type ProjectData = {
   name: string;
   url: string;
   date: Date;
   description: string;
+  status: StatusType;
   repoURL?: string;
   stack?: ITechIconProps[];
 };

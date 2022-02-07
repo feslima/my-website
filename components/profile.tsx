@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ProfileImage: FunctionComponent<{}> = () => {
@@ -28,10 +27,10 @@ const ProfileSocial: FunctionComponent<{}> = () => {
   return (
     <div className="flex justify-center space-x-4 mt-3">
       <a className="text-3xl" href="#">
-        <FontAwesomeIcon icon={faGithub} />
+        <FontAwesomeIcon icon={['fab', 'github']} />
       </a>
       <a className="text-3xl" href="#">
-        <FontAwesomeIcon icon={faLinkedin} />
+        <FontAwesomeIcon icon={['fab', 'linkedin']} />
       </a>
     </div>
   );

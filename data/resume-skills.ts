@@ -1,11 +1,3 @@
-import {
-  faDatabase,
-  faLaptopCode,
-  faCubes,
-  faScrewdriverWrench,
-  faPaintBrush,
-  faCloud,
-} from '@fortawesome/free-solid-svg-icons';
 import { IResumeSkillProps } from '../types';
 import {
   AWS_CLOUDFRONT,
@@ -41,12 +33,12 @@ import {
 export const resumeSkills: IResumeSkillProps[] = [
   {
     description: 'Programming Languages',
-    descriptionIcon: faLaptopCode,
+    descriptionIcon: ['fas', 'laptop-code'],
     tools: [PYTHON, JAVASCRIPT, TYPESCRIPT],
   },
   {
     description: 'Frameworks',
-    descriptionIcon: faCubes,
+    descriptionIcon: ['fas', 'cubes'],
     tools: [
       DJANGO,
       DJANGO_REST,
@@ -60,27 +52,27 @@ export const resumeSkills: IResumeSkillProps[] = [
   },
   {
     description: 'Mark up languages',
-    descriptionIcon: faPaintBrush,
+    descriptionIcon: ['fas', 'paint-brush'],
     tools: [HTML, CSS, MARKDOWN],
   },
   {
     description: 'SQL databases',
-    descriptionIcon: faDatabase,
+    descriptionIcon: ['fas', 'database'],
     tools: [SQLITE, POSTGRESQL],
   },
   {
     description: 'NoSQL databases',
-    descriptionIcon: faDatabase,
+    descriptionIcon: ['fas', 'database'],
     tools: [{ name: 'Redis', url: 'https://www.sqlite.org/index.html' }],
   },
   {
     description: 'Cloud Infrastructure',
-    descriptionIcon: faCloud,
+    descriptionIcon: ['fas', 'cloud'],
     tools: [AWS_EC2, AWS_S3, AWS_RDS, AWS_CLOUDFRONT, PULUMI],
   },
   {
     description: 'Other tools',
-    descriptionIcon: faScrewdriverWrench,
+    descriptionIcon: ['fas', 'screwdriver-wrench'],
     tools: [DOCKER, GRAPHQL, JWT, BASH, MYPY, GIT, GITHUB],
   },
 ];
