@@ -125,3 +125,26 @@ export const GITHUB: ITechIconProps = {
   name: 'GitHub',
   url: 'https://github.com/',
 };
+
+export const PYQT: ITechIconProps = {
+  name: 'PyQt5',
+  url: 'https://wiki.python.org/moin/PyQt',
+  filename: 'pyqt.svg',
+};
+export const NUMPY: ITechIconProps = {
+  name: 'NumPy',
+  url: 'https://numpy.org/',
+};
+export const SCIPY: ITechIconProps = {
+  name: 'SciPy',
+  url: 'https://scipy.org/',
+};
+export const PANDAS: ITechIconProps = {
+  name: 'pandas',
+  url: 'https://pandas.pydata.org/',
+};
+
+export const CYPRESS: ITechIconProps = {
+  name: 'Cypress',
+  url: 'https://www.cypress.io/',
+};
