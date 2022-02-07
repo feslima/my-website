@@ -26,10 +26,10 @@ const ProfileInfo: FunctionComponent<{}> = () => {
 const ProfileSocial: FunctionComponent<{}> = () => {
   return (
     <div className="flex justify-center space-x-4 mt-3">
-      <a className="text-3xl" href="#">
+      <a className="text-3xl" href="https://www.github.com/feslima">
         <FontAwesomeIcon icon={['fab', 'github']} />
       </a>
-      <a className="text-3xl" href="#">
+      <a className="text-3xl" href="https://www.linkedin.com/in/feslima">
         <FontAwesomeIcon icon={['fab', 'linkedin']} />
       </a>
     </div>
