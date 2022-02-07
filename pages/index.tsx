@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Portfolio from '../components/portfolio';
 import Presentation from '../components/presentation';
 import Profile from '../components/profile';
 import Resume from '../components/resume';
@@ -16,6 +17,7 @@ const Home: NextPage = () => {
       <Profile />
       <Presentation />
       <Resume />
+      <Portfolio />
     </div>
   );
 };
