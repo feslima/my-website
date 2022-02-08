@@ -1,4 +1,8 @@
 {
     "languageToggle": "Language",
-    "greeting": "Hi! Welcome"
+    "presentation": {
+        "greeting": "Hi! Welcome",
+        "first": "If you got here I'm assuming you're not lost. However, even if you are, maybe this could still be productive to you.",
+        "second": "Anyways, I hope you like it here since this is what I consider the entrypoint for my works showcase."
+    }
 }

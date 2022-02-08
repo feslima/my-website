@@ -1,4 +1,8 @@
 {
     "languageToggle": "Idioma",
-    "greeting": "Olá! Seja bem vindo"
+    "presentation": {
+        "greeting": "Olá! Seja bem vindo",
+        "first": "Se chegou até aqui eu presumo que não está perdido. Porém, mesmo que esteja, talvez isto ainda seja produtivo para você.",
+        "second": "De qualquer forma, espero que goste do que está vendo. Isto é o que considero a vitrine dos meus trabalhos."
+    }
 }
