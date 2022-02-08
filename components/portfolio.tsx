@@ -1,11 +1,14 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 import Projects from '../data/portfolio';
 import { ITechIconProps, ProjectData, StatusType } from '../types';
 import string2HTMLParser from '../utils/parsers';
 import { Section, SectionTitle } from './section';
 import TechIcon from './tech-icon';
+import { useTranslation, useSelectedLanguage } from 'next-export-i18n';
+import localeLookUp from '../data/i18n';
+import capitalize from '../utils/capitalize';
 
 const ProjectName: FunctionComponent<{ name: string; url: string }> = ({
   name,
@@ -21,13 +24,18 @@ const ProjectName: FunctionComponent<{ name: string; url: string }> = ({
   );
 };
 
+type localeKey = keyof typeof localeLookUp;
 const ProjectDate: FunctionComponent<{ date: Date }> = ({ date }) => {
+  const { lang }: { lang: localeKey } = useSelectedLanguage();
+
   return (
     <h4 className="text-sm sm:text-base">
-      {new Intl.DateTimeFormat(undefined, {
-        month: 'long',
-        year: 'numeric',
-      }).format(date)}
+      {capitalize(
+        new Intl.DateTimeFormat(localeLookUp[lang], {
+          month: 'long',
+          year: 'numeric',
+        }).format(date)
+      )}
     </h4>
   );
 };
@@ -68,9 +76,10 @@ const ProjectStatus: FunctionComponent<{ status: StatusType }> = ({
 };
 
 const ProjectRepoLink: FunctionComponent<{ url: string }> = ({ url }) => {
+  const { t } = useTranslation();
   return (
     <div className="flex space-x-4">
-      <p className="font-semibold">Check it out on GitHub:</p>
+      <p className="font-semibold">{t('portfolio.githubCheck')}:</p>
       <TechIcon name="" url={url} filename="github.svg" />
     </div>
   );
@@ -79,9 +88,10 @@ const ProjectRepoLink: FunctionComponent<{ url: string }> = ({ url }) => {
 const ProjectDescription: FunctionComponent<{ description: string }> = ({
   description,
 }) => {
+  const { t } = useTranslation();
   return (
     <p>
-      <b>Description: </b>
+      <b>{t('portfolio.description')}: </b>
       {string2HTMLParser(description)}
     </p>
   );
@@ -90,9 +100,10 @@ const ProjectDescription: FunctionComponent<{ description: string }> = ({
 const ProjectStack: FunctionComponent<{ stack: ITechIconProps[] }> = ({
   stack,
 }) => {
+  const { t } = useTranslation();
   return (
     <>
-      <p className="text-center font-semibold">Tech used</p>
+      <p className="text-center font-semibold">{t('portfolio.tech')}</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 py-2 border-y-[1px] border-black">
         {stack.map(({ name, url, filename }) => (
           <div className="flex" key={name}>
@@ -107,27 +118,29 @@ const ProjectStack: FunctionComponent<{ stack: ITechIconProps[] }> = ({
 const Project: FunctionComponent<{ data: ProjectData }> = ({
   data: { name, url, date, status, description, repoURL, stack },
 }) => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex justify-between flex-col sm:flex-row">
-        <ProjectName name={name} url={url} />
+        <ProjectName name={t(`portfolio.projects.${name}.name`)} url={url} />
         <ProjectDate date={date} />
       </div>
       <ProjectStatus status={status} />
       {repoURL && <ProjectRepoLink url={repoURL} />}
-      <ProjectDescription description={description} />
+      <ProjectDescription
+        description={t(`portfolio.projects.${name}.description`)}
+      />
       {stack && <ProjectStack stack={stack} />}
     </>
   );
 };
 
 const Portfolio: FunctionComponent = () => {
+  const { t } = useTranslation();
   return (
     <Section id="portfolio">
-      <SectionTitle text="Portfolio" animate={true} />
-      <h3 className="text-xl text-bold">
-        These are some of the projects I'm working (or have worked) on:
-      </h3>
+      <SectionTitle text={t('portfolio.title')} animate={true} />
+      <h3 className="text-xl text-bold">{t('portfolio.subtitle')}</h3>
       <div className="grid grid-cols-1 p-2 text-base">
         {Projects.map((project, index) => (
           <div
