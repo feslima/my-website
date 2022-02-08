@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FunctionComponent, useState } from 'react';
+import LanguageToggle from './i18n';
 
 interface INavbarItemProps {
   name: string;
@@ -29,9 +30,12 @@ const Navbar: FunctionComponent<INavbarProps> = ({ sticky = false }) => {
       className={`${stickyClass} bg-feslima-800 text-lg text-white font-bold`}
     >
       <nav className="max-w-screen-lg mx-auto py-2 flex flex-wrap sm:flex-no-wrap justify-center">
-        <p className="mx-8 uppercase text-center sm:text-left self-center grow">
-          Felipe Lima
-        </p>
+        <div className="mx-8 flex space-x-8 grow">
+          <p className="uppercase text-center sm:text-left self-center">
+            Felipe Lima
+          </p>
+          <LanguageToggle />
+        </div>
         <button className="sm:hidden px-3" onClick={() => setOpen(!open)}>
           <FontAwesomeIcon icon={['fas', 'bars']} />
         </button>
