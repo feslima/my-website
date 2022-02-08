@@ -1,5 +1,6 @@
 {
   "name": "my-website",
+  "homepage": "https://www.felipesl.com",
   "private": true,
   "scripts": {
     "dev": "next dev",
