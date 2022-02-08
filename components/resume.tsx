@@ -6,6 +6,7 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { resumeSkills } from '../data/resume-skills';
 import TechIcon from './tech-icon';
 import { IResumeSkillProps } from '../types';
+import { useTranslation } from 'next-export-i18n';
 
 const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
   description,
@@ -53,23 +54,19 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
 };
 
 const Resume: FunctionComponent<{}> = () => {
+  const { t } = useTranslation();
   return (
     <Section id="resume">
-      <SectionTitle text="Resume" animate={true} />
-      <h3 className="text-lg text-bold">What can I do?</h3>
-      <p>
-        I'm able to develop several tasks related to building a web presence.
-      </p>
-      <p>
-        I call myself a backend developer because that is my area of focus.
-        However, I do know my way around some frontend frameworks/tools.
-      </p>
-      <p>These are some of my skills/tooling:</p>
+      <SectionTitle text={t('resume.title')} animate={true} />
+      <h3 className="text-lg text-bold">{t('resume.subtitle')}</h3>
+      <p>{t('resume.first')}</p>
+      <p>{t('resume.second')}</p>
+      <p>{t('resume.third')}</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-x-4">
         {resumeSkills.map(({ description, descriptionIcon, tools }, index) => (
           <div key={`skill${index}`} className="my-2 mx-auto w-full">
             <ResumeSkill
-              description={description}
+              description={t(`resume.skills.${description}`)}
               descriptionIcon={descriptionIcon}
               tools={tools}
             />

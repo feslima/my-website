@@ -4,5 +4,21 @@
         "greeting": "Hi! Welcome",
         "first": "If you got here I'm assuming you're not lost. However, even if you are, maybe this could still be productive to you.",
         "second": "Anyways, I hope you like it here since this is what I consider the entrypoint for my works showcase."
+    },
+    "resume": {
+        "title": "Resume",
+        "subtitle": "What can I do?",
+        "first": "I'm able to develop several tasks related to building a web presence.",
+        "second": "I call myself a backend developer because that is my area of focus. However, I do know my way around some frontend frameworks/tools.",
+        "third": "These are some of my skills/tooling:",
+        "skills": {
+            "languages": "Programming Languages",
+            "frameworks": "Frameworks",
+            "markup": "Mark up languages",
+            "sql": "SQL Databases",
+            "nosql": "NoSQL Databases",
+            "cloud": "Cloud Infrastructure",
+            "other": "Other tools"
+        }
     }
 }

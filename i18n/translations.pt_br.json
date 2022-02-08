@@ -4,5 +4,21 @@
         "greeting": "Olá! Seja bem vindo",
         "first": "Se chegou até aqui eu presumo que não está perdido. Porém, mesmo que esteja, talvez isto ainda seja produtivo para você.",
         "second": "De qualquer forma, espero que goste do que está vendo. Isto é o que considero a vitrine dos meus trabalhos."
+    },
+    "resume": {
+        "title": "Currículo",
+        "subtitle": "O que eu posso fazer?",
+        "first": "Eu desenvolvo diversas tarefas relacionadas à construção de uma presença na web.",
+        "second": "Eu me atribuo como desenvolvedor backend porque esta é a minha área de foco. No entanto, eu sei me \"virar\" com algumas ferramentas/frameworks de frontend.",
+        "third": "Estas são algumas das minhas habilidades/ferramentas que manuseio:",
+        "skills": {
+            "languages": "Linguagens de Programação",
+            "frameworks": "Frameworks",
+            "markup": "Linguagens Mark up",
+            "sql": "Databases SQL",
+            "nosql": "Databases NoSQL",
+            "cloud": "Infraestrutura na Nuvem",
+            "other": "Outras Ferramentas"
+        }
     }
 }

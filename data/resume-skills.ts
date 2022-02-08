@@ -34,12 +34,12 @@ import {
 
 export const resumeSkills: IResumeSkillProps[] = [
   {
-    description: 'Programming Languages',
+    description: 'languages',
     descriptionIcon: ['fas', 'laptop-code'],
     tools: [PYTHON, JAVASCRIPT, TYPESCRIPT],
   },
   {
-    description: 'Frameworks',
+    description: 'frameworks',
     descriptionIcon: ['fas', 'cubes'],
     tools: [
       DJANGO,
@@ -54,27 +54,27 @@ export const resumeSkills: IResumeSkillProps[] = [
     ],
   },
   {
-    description: 'Mark up languages',
+    description: 'markup',
     descriptionIcon: ['fas', 'paint-brush'],
     tools: [HTML, CSS, MARKDOWN],
   },
   {
-    description: 'SQL databases',
+    description: 'sql',
     descriptionIcon: ['fas', 'database'],
     tools: [SQLITE, POSTGRESQL],
   },
   {
-    description: 'NoSQL databases',
+    description: 'nosql',
     descriptionIcon: ['fas', 'database'],
     tools: [REDIS],
   },
   {
-    description: 'Cloud Infrastructure',
+    description: 'cloud',
     descriptionIcon: ['fas', 'cloud'],
     tools: [AWS_EC2, AWS_S3, AWS_RDS, AWS_CLOUDFRONT, PULUMI],
   },
   {
-    description: 'Other tools',
+    description: 'other',
     descriptionIcon: ['fas', 'screwdriver-wrench'],
     tools: [DOCKER, GRAPHQL, JWT, BASH, MYPY, GIT, GITHUB],
   },
