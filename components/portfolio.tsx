@@ -158,13 +158,13 @@ const Portfolio: React.FC = () => {
     <Section id="portfolio">
       <SectionTitle text="Portfolio" animate={true} />
       <h3 className="text-xl text-bold">
-        These are some of the projects I'm working (or have worked) on:
+        These are some of the projects I&apos;m working (or have worked) on:
       </h3>
       <div className="grid grid-cols-1 p-2 text-base">
         {Projects.map((project, index) => (
           <div
             key={`project${index}`}
-            className="mx-auto w-full space-y-2 flex flex-col justify-center pl-4 pb-8 last:pb-0 border-l-2 border-feslima-900 before:bg-feslima-200 before:w-4 before:h-4 before:relative before:right-6 before:top-6 before:border-2 before:border-feslima-900 before:rounded-full"
+            className="mx-auto w-full space-y-2 flex flex-col justify-center pl-4 pb-8 last:pb-0 border-l-2 border-feslima-purple-900 before:bg-feslima-purple-200 before:w-4 before:h-4 before:relative before:right-6 before:top-6 before:border-2 before:border-feslima-purple-900 before:rounded-full"
           >
             <Project data={project} />
           </div>

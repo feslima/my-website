@@ -8,8 +8,15 @@ interface INavbarItemProps {
 }
 const NavBarItem: React.FC<INavbarItemProps> = ({ name, sectionRef, url }) => {
   return (
-    <li className="px-1 mx-1 inline-block uppercase hover:opacity-50 hover:after:content-['\_'] text-feslima-purple-300">
-      <a href={url ?? `#${sectionRef}`}>{name}</a>
+    <li className="px-1 mx-1 inline-block uppercase hover:opacity-50 hover:after:content-['\_'] text-feslima-purple-400">
+      {/* eslint-disable-next-line */}
+      <a
+        href={url ?? `#${sectionRef}`}
+        rel={url ? 'noopener noreferrer' : undefined}
+        target={url ? '_blank' : '_self'}
+      >
+        {name}
+      </a>
     </li>
   );
 };
@@ -21,9 +28,9 @@ interface INavbarProps {
 const Navbar: React.FC<INavbarProps> = ({ sticky = false }) => {
   const [open, setOpen] = React.useState<boolean>(false);
   const items: { label: string; url?: string; sectionRef?: string }[] = [
+    { label: 'Blog', url: '/blog' },
     { label: 'Resume', sectionRef: 'Resume' },
     { label: 'Portfolio', sectionRef: 'Portfolio' },
-    { label: 'Blog', url: '/blog' },
   ];
   const stickyClass = sticky ? 'sticky top-0 z-10' : '';
   return (
@@ -32,7 +39,7 @@ const Navbar: React.FC<INavbarProps> = ({ sticky = false }) => {
     >
       <nav className="max-w-screen-lg mx-auto py-2 flex flex-wrap sm:flex-no-wrap justify-center">
         <div className="mx-8 flex space-x-8 grow">
-          <p className="uppercase text-center sm:text-left self-center text-feslima-purple-300">
+          <p className="uppercase text-center sm:text-left self-center text-feslima-purple-400">
             Felipe Lima
           </p>
         </div>

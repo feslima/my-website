@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { ITechIconProps } from '../types';
 
@@ -10,7 +11,13 @@ const TechIcon: React.FC<ITechIconProps> = ({ name, url, filename }) => {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <img className="inline w-6 h-6" src={`images/icons/${location}`} alt="" />
+      <Image
+        width={20}
+        height={20}
+        className="inline"
+        src={`/images/icons/${location}`}
+        alt=""
+      />
       <p>{name}</p>
     </a>
   );

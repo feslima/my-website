@@ -12,7 +12,14 @@ const Blog: NextPage = () => {
           <link rel="icon" href="images/favicon.svg" />
         </Head>
 
-        <h1>Hello World!</h1>
+        <div className="space-y-4">
+          <h1 className="text-4xl font-bold">Hello World!</h1>
+          <p>
+            Here you can find a few things that I either find interesting or
+            currently working. I find that, at least for me, writing about some
+            topic is a better way to fixate knowledge.
+          </p>
+        </div>
       </div>
     </BlogLayout>
   );

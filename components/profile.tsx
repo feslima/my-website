@@ -1,11 +1,14 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 
 const ProfileImage: React.FC = () => {
   return (
-    <img
-      className="w-[200px] h-[300px] rounded-full shadow-lg shadow-feslima-500/50 mx-auto sm:mx-0"
-      src="images/avatar.jpg"
+    <Image
+      className="rounded-full shadow-lg shadow-feslima-500/50 mx-auto sm:mx-0"
+      width={200}
+      height={300}
+      src="/images/avatar.jpg"
       alt=""
     />
   );

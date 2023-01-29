@@ -16,17 +16,14 @@ const ResumeSkill: React.FC<IResumeSkillProps> = ({
     <Disclosure defaultOpen={true}>
       {({ open }) => (
         <>
-          <Disclosure.Button className="py-2 px-4 rounded-lg bg-feslima-300 font-medium w-full flex items-center">
+          <Disclosure.Button className="py-2 px-4 rounded-lg bg-feslima-purple-200 border-2 border-feslima-purple-700 font-medium w-full flex items-center">
             <div className="grow space-x-2">
-              <FontAwesomeIcon
-                className="text-feslima-purple-800"
-                icon={descriptionIcon}
-              />
-              <span className="text-feslima-purple-800">{description}</span>
+              <FontAwesomeIcon icon={descriptionIcon} />
+              <span>{description}</span>
             </div>
             <FontAwesomeIcon
               icon={faChevronDown}
-              className={`transition-transform duration-300 text-feslima-purple-800 ${
+              className={`transition-transform duration-300 ${
                 open ? 'transform rotate-180' : ''
               }`}
             />
