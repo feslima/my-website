@@ -99,10 +99,6 @@ export const AWS_CLOUDFRONT: ITechIconProps = {
   filename: 'cloudfront.svg',
   url: 'https://aws.amazon.com/cloudfront/',
 };
-export const PULUMI: ITechIconProps = {
-  name: 'Pulumi',
-  url: 'https://www.pulumi.com/',
-};
 
 export const DOCKER: ITechIconProps = {
   name: 'Docker',

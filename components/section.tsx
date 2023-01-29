@@ -1,11 +1,11 @@
-import { FunctionComponent, ReactNode } from 'react';
+import React from 'react';
 
 interface ISectionTitleProps {
   text: string;
   size?: string;
   animate?: boolean;
 }
-export const SectionTitle: FunctionComponent<ISectionTitleProps> = ({
+export const SectionTitle: React.FC<ISectionTitleProps> = ({
   text,
   size = '4xl',
   animate = false,
@@ -21,9 +21,9 @@ export const SectionTitle: FunctionComponent<ISectionTitleProps> = ({
 };
 interface ISectionProps {
   id?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
-export const Section: FunctionComponent<ISectionProps> = ({ id, children }) => {
+export const Section: React.FC<ISectionProps> = ({ id, children }) => {
   return (
     <section id={id} className="p-6 space-y-3">
       {children}

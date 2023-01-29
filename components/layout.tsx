@@ -1,10 +1,10 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import React from 'react';
 import Navbar from './navbar';
 
 type LayoutProps = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
-const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="bg-feslima-50 min-h-screen">
       <Navbar sticky={true} />

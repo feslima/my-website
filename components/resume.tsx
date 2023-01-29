@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
 import { Section, SectionTitle } from './section';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
@@ -6,9 +6,8 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { resumeSkills } from '../data/resume-skills';
 import TechIcon from './tech-icon';
 import { IResumeSkillProps } from '../types';
-import { useTranslation } from 'next-export-i18n';
 
-const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
+const ResumeSkill: React.FC<IResumeSkillProps> = ({
   description,
   descriptionIcon,
   tools,
@@ -19,13 +18,16 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
         <>
           <Disclosure.Button className="py-2 px-4 rounded-lg bg-feslima-300 font-medium w-full flex items-center">
             <div className="grow">
-              <FontAwesomeIcon icon={descriptionIcon} />{' '}
-              <span>{description} </span>
+              <FontAwesomeIcon
+                className="text-feslima-purple-800"
+                icon={descriptionIcon}
+              />{' '}
+              <span className="text-feslima-purple-800">{description}</span>
             </div>
             <FontAwesomeIcon
               icon={faChevronDown}
-              className={`transition-transform duration-300 ${
-                open ? 'transform rotate-180' : ''
+              className={`transition-transform duration-300 text-feslima-purple-800 ${
+                open ? '' : 'transform rotate-180'
               }`}
             />
           </Disclosure.Button>
@@ -37,7 +39,7 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
             leaveFrom="transform translate-y-0 opacity-100"
             leaveTo="transform -translate-y-1/4 opacity-0"
           >
-            <Disclosure.Panel className="">
+            <Disclosure.Panel>
               <div className="list-none px-3 mt-3 gap-x-0 space-y-3 columns-2">
                 {tools.map(({ name, url, filename }) => (
                   <div key={name}>
@@ -53,20 +55,33 @@ const ResumeSkill: FunctionComponent<IResumeSkillProps> = ({
   );
 };
 
-const Resume: FunctionComponent<{}> = () => {
-  const { t } = useTranslation();
+const Resume: React.FC = () => {
+  const skillDescriptions: Record<string, string> = {
+    languages: 'Programming Languages',
+    frameworks: 'Frameworks',
+    markup: 'Mark up languages',
+    sql: 'SQL Databases',
+    nosql: 'NoSQL Databases',
+    cloud: 'Cloud Infrastructure',
+    other: 'Other tools',
+  };
   return (
     <Section id="resume">
-      <SectionTitle text={t('resume.title')} animate={true} />
-      <h3 className="text-lg text-bold">{t('resume.subtitle')}</h3>
-      <p>{t('resume.first')}</p>
-      <p>{t('resume.second')}</p>
-      <p>{t('resume.third')}</p>
+      <SectionTitle text="Resume" animate={true} />
+      <h3 className="text-lg text-bold">What can I do?</h3>
+      <p>
+        I'm able to develop several tasks related to building a web presence.
+      </p>
+      <p>
+        I call myself a backend developer because that is my area of focus.
+        However, I do know my way around some frontend frameworks/tools.
+      </p>
+      <p>These are some of my skills/tooling:</p>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-x-4">
         {resumeSkills.map(({ description, descriptionIcon, tools }, index) => (
           <div key={`skill${index}`} className="my-2 mx-auto w-full">
             <ResumeSkill
-              description={t(`resume.skills.${description}`)}
+              description={skillDescriptions[description]}
               descriptionIcon={descriptionIcon}
               tools={tools}
             />

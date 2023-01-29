@@ -1,11 +1,7 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
 import { ITechIconProps } from '../types';
 
-const TechIcon: FunctionComponent<ITechIconProps> = ({
-  name,
-  url,
-  filename,
-}) => {
+const TechIcon: React.FC<ITechIconProps> = ({ name, url, filename }) => {
   const location = filename ? filename : `${name.toLowerCase()}.svg`;
   return (
     <a

@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProfileImage: FunctionComponent<{}> = () => {
+const ProfileImage: React.FC = () => {
   return (
     <img
       className="w-[200px] h-[300px] rounded-full shadow-lg shadow-feslima-500/50 mx-auto sm:mx-0"
@@ -11,7 +11,7 @@ const ProfileImage: FunctionComponent<{}> = () => {
   );
 };
 
-const ProfileInfo: FunctionComponent<{}> = () => {
+const ProfileInfo: React.FC = () => {
   return (
     <div className="self-center mt-3 sm:mt-0">
       <h1 className="text-4xl text-center">Felipe Lima</h1>
@@ -23,7 +23,7 @@ const ProfileInfo: FunctionComponent<{}> = () => {
   );
 };
 
-const ProfileSocial: FunctionComponent<{}> = () => {
+const ProfileSocial: React.FC = () => {
   return (
     <div className="flex justify-center space-x-4 mt-3">
       <a className="text-3xl" href="https://www.github.com/feslima">
@@ -36,7 +36,7 @@ const ProfileSocial: FunctionComponent<{}> = () => {
   );
 };
 
-const Profile: FunctionComponent<{}> = () => {
+const Profile: React.FC = () => {
   return (
     <div className="my-3 columns-1 sm:columns-2 flex flex-col sm:flex-row justify-center space-x-0 sm:space-x-4">
       <ProfileImage />

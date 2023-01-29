@@ -1,16 +1,15 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FunctionComponent, useEffect, useState } from 'react';
+import React from 'react';
 import Projects from '../data/portfolio';
 import { ITechIconProps, ProjectData, StatusType } from '../types';
 import string2HTMLParser from '../utils/parsers';
 import { Section, SectionTitle } from './section';
 import TechIcon from './tech-icon';
-import { useTranslation, useSelectedLanguage } from 'next-export-i18n';
 import localeLookUp from '../data/i18n';
 import capitalize from '../utils/capitalize';
 
-const ProjectName: FunctionComponent<{ name: string; url: string }> = ({
+const ProjectName: React.FC<{ name: string; url: string }> = ({
   name,
   url,
 }) => {
@@ -24,14 +23,11 @@ const ProjectName: FunctionComponent<{ name: string; url: string }> = ({
   );
 };
 
-type localeKey = keyof typeof localeLookUp;
-const ProjectDate: FunctionComponent<{ date: Date }> = ({ date }) => {
-  const { lang }: { lang: localeKey } = useSelectedLanguage();
-
+const ProjectDate: React.FC<{ date: Date }> = ({ date }) => {
   return (
     <h4 className="text-sm sm:text-base">
       {capitalize(
-        new Intl.DateTimeFormat(localeLookUp[lang], {
+        new Intl.DateTimeFormat('pt-BR', {
           month: 'long',
           year: 'numeric',
         }).format(date)
@@ -40,9 +36,7 @@ const ProjectDate: FunctionComponent<{ date: Date }> = ({ date }) => {
   );
 };
 
-const ProjectStatus: FunctionComponent<{ status: StatusType }> = ({
-  status,
-}) => {
+const ProjectStatus: React.FC<{ status: StatusType }> = ({ status }) => {
   let icon: IconProp;
   let iconColor: string;
   switch (status) {
@@ -75,35 +69,30 @@ const ProjectStatus: FunctionComponent<{ status: StatusType }> = ({
   );
 };
 
-const ProjectRepoLink: FunctionComponent<{ url: string }> = ({ url }) => {
-  const { t } = useTranslation();
+const ProjectRepoLink: React.FC<{ url: string }> = ({ url }) => {
   return (
     <div className="flex space-x-4">
-      <p className="font-semibold">{t('portfolio.githubCheck')}:</p>
+      <p className="font-semibold">Check it out on GitHub</p>
       <TechIcon name="" url={url} filename="github.svg" />
     </div>
   );
 };
 
-const ProjectDescription: FunctionComponent<{ description: string }> = ({
+const ProjectDescription: React.FC<{ description: string }> = ({
   description,
 }) => {
-  const { t } = useTranslation();
   return (
     <p>
-      <b>{t('portfolio.description')}: </b>
+      <b>Description</b>
       {string2HTMLParser(description)}
     </p>
   );
 };
 
-const ProjectStack: FunctionComponent<{ stack: ITechIconProps[] }> = ({
-  stack,
-}) => {
-  const { t } = useTranslation();
+const ProjectStack: React.FC<{ stack: ITechIconProps[] }> = ({ stack }) => {
   return (
     <>
-      <p className="text-center font-semibold">{t('portfolio.tech')}</p>
+      <p className="text-center font-semibold">Tech used</p>
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 py-2 border-y-[1px] border-black">
         {stack.map(({ name, url, filename }) => (
           <div className="flex" key={name}>
@@ -115,32 +104,63 @@ const ProjectStack: FunctionComponent<{ stack: ITechIconProps[] }> = ({
   );
 };
 
-const Project: FunctionComponent<{ data: ProjectData }> = ({
+const portfolioProjects: Record<string, { name: string; description: string }> =
+  {
+    myWebsite: {
+      name: 'Personal website',
+      description:
+        "This project is the site you are browsing right now. It's a simple static page deployed directly on GitHub Pages.",
+    },
+    pypix: {
+      name: 'PyPIX',
+      description:
+        'This is a python package for generating static PIX codes used for money transfers in Brazil.\nThis can be used for automation of QR Code generation to improve your software user experience.',
+    },
+    pyinterboleto: {
+      name: 'pyinterboleto',
+      description:
+        "Python package to handle invoice issuing/querying for legal entities in Brazil via Banco Inter's API.",
+    },
+    femmeEcommerce: {
+      name: "Femme's E-commerce",
+      description:
+        "This is a fullstack e-commerce website for Femme's Brewery.\n\nFemme is a craft brewery that is established in cities throughout the state of Paraíba in Brazil.",
+    },
+    metacontrol: {
+      name: 'Metacontrol',
+      description:
+        "This one was initiated during my Masters. In fact, this is the poster child for the whole thing.\n\nIt's an assembly of several areas related to Process Engineering: Linear Algebra, Statistics, Machine Learning (a sub sect of it, called Gaussian Regression), Non Linear Optimization, etc.\n\nAll of these are bundled in a desktop application that has process engineers as end users. This was my first professional experience that involved software development.",
+    },
+    pyhensad: {
+      name: 'pyHENSAD',
+      description:
+        "This is a desktop software application that also has process engineers (students) as end users.\n\nIt's a re-implementation of an already existing software called HENSAD.",
+    },
+  };
+const Project: React.FC<{ data: ProjectData }> = ({
   data: { name, url, date, status, description, repoURL, stack },
 }) => {
-  const { t } = useTranslation();
   return (
     <>
       <div className="flex justify-between flex-col sm:flex-row">
-        <ProjectName name={t(`portfolio.projects.${name}.name`)} url={url} />
+        <ProjectName name={portfolioProjects[name].name} url={url} />
         <ProjectDate date={date} />
       </div>
       <ProjectStatus status={status} />
       {repoURL && <ProjectRepoLink url={repoURL} />}
-      <ProjectDescription
-        description={t(`portfolio.projects.${name}.description`)}
-      />
+      <ProjectDescription description={portfolioProjects[name].description} />
       {stack && <ProjectStack stack={stack} />}
     </>
   );
 };
 
-const Portfolio: FunctionComponent = () => {
-  const { t } = useTranslation();
+const Portfolio: React.FC = () => {
   return (
     <Section id="portfolio">
-      <SectionTitle text={t('portfolio.title')} animate={true} />
-      <h3 className="text-xl text-bold">{t('portfolio.subtitle')}</h3>
+      <SectionTitle text="Portfolio" animate={true} />
+      <h3 className="text-xl text-bold">
+        These are some of the projects I'm working (or have worked) on:
+      </h3>
       <div className="grid grid-cols-1 p-2 text-base">
         {Projects.map((project, index) => (
           <div

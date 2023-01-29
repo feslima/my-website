@@ -22,7 +22,6 @@ import {
   MYPY,
   NEXTJS,
   POSTGRESQL,
-  PULUMI,
   PYTEST,
   PYTHON,
   REACT,
@@ -71,7 +70,7 @@ export const resumeSkills: IResumeSkillProps[] = [
   {
     description: 'cloud',
     descriptionIcon: ['fas', 'cloud'],
-    tools: [AWS_EC2, AWS_S3, AWS_RDS, AWS_CLOUDFRONT, PULUMI],
+    tools: [AWS_EC2, AWS_S3, AWS_RDS, AWS_CLOUDFRONT],
   },
   {
     description: 'other',

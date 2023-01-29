@@ -15,7 +15,6 @@ import {
   NUMPY,
   PANDAS,
   POSTGRESQL,
-  PULUMI,
   PYQT,
   PYTEST,
   PYTHON,
@@ -74,7 +73,6 @@ const Projects: ProjectData[] = [
       AWS_EC2,
       AWS_S3,
       AWS_RDS,
-      PULUMI,
     ],
   },
   {
