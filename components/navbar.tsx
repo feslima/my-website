@@ -3,12 +3,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface INavbarItemProps {
   name: string;
-  sectionRef: string;
+  sectionRef?: string;
+  url?: string;
 }
-const NavBarItem: React.FC<INavbarItemProps> = ({ name, sectionRef }) => {
+const NavBarItem: React.FC<INavbarItemProps> = ({ name, sectionRef, url }) => {
   return (
     <li className="px-1 mx-1 inline-block uppercase hover:opacity-50 hover:after:content-['\_'] text-feslima-purple-300">
-      <a href={`#${sectionRef}`}>{name}</a>
+      <a href={url ?? `#${sectionRef}`}>{name}</a>
     </li>
   );
 };
@@ -19,7 +20,11 @@ interface INavbarProps {
 
 const Navbar: React.FC<INavbarProps> = ({ sticky = false }) => {
   const [open, setOpen] = React.useState<boolean>(false);
-  const items: string[] = ['Resume', 'Portfolio'];
+  const items: { label: string; url?: string; sectionRef?: string }[] = [
+    { label: 'Resume', sectionRef: 'Resume' },
+    { label: 'Portfolio', sectionRef: 'Portfolio' },
+    { label: 'Blog', url: '/blog' },
+  ];
   const stickyClass = sticky ? 'sticky top-0 z-10' : '';
   return (
     <div
@@ -42,9 +47,10 @@ const Navbar: React.FC<INavbarProps> = ({ sticky = false }) => {
           <ul className="list-none flex flex-col sm:flex-row">
             {items.map((item) => (
               <NavBarItem
-                key={item.toLowerCase()}
-                name={item}
-                sectionRef={item.toLowerCase()}
+                key={item.label.toLowerCase()}
+                name={item.label}
+                sectionRef={item.sectionRef?.toLowerCase()}
+                url={item.url}
               />
             ))}
           </ul>

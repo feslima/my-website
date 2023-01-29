@@ -1,6 +1,5 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import Layout from '../components/layout';
 import { config, library } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -13,11 +12,7 @@ library.add(fas);
 library.add(far);
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;
