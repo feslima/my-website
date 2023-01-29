@@ -55,7 +55,7 @@ const Projects: ProjectData[] = [
   },
   {
     name: 'femmeEcommerce',
-    url: 'https://loja.cervejafemme.com/',
+    url: '',
     date: new Date(2021, 3),
     description: '',
     status: 'Active' as const,

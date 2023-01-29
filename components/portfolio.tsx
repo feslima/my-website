@@ -6,7 +6,6 @@ import { ITechIconProps, ProjectData, StatusType } from '../types';
 import string2HTMLParser from '../utils/parsers';
 import { Section, SectionTitle } from './section';
 import TechIcon from './tech-icon';
-import localeLookUp from '../data/i18n';
 import capitalize from '../utils/capitalize';
 
 const ProjectName: React.FC<{ name: string; url: string }> = ({
@@ -27,7 +26,7 @@ const ProjectDate: React.FC<{ date: Date }> = ({ date }) => {
   return (
     <h4 className="text-sm sm:text-base">
       {capitalize(
-        new Intl.DateTimeFormat('pt-BR', {
+        new Intl.DateTimeFormat('en-US', {
           month: 'long',
           year: 'numeric',
         }).format(date)
